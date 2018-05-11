@@ -5,8 +5,10 @@ using UnityEngine;
 public class pawnController : MonoBehaviour {
     public Camera MainCamera;
     Rigidbody2D rigid;
+    GameObject generator;
 	// Use this for initialization
 	void Start () {
+        generator = GameObject.FindGameObjectWithTag("generator");
         MainCamera = Camera.main;
         rigid = this.GetComponent<Rigidbody2D>();
     }
@@ -14,15 +16,16 @@ public class pawnController : MonoBehaviour {
     // Update is called once per frame
     void Update () {
         MainCamera.transform.position = new Vector3(transform.position.x, transform.position.y, -10);
+        generator.transform.position = new Vector3(transform.position.x,transform.position.y,0);
+
         if (Input.GetAxis("Vertical") != 0)
         {
             rigid.AddForce(new Vector2(0.0f, Input.GetAxis("Vertical")));
-            Debug.Log(Input.GetAxis("Vertical"));
         }
         if (Input.GetAxis("Horizontal") != 0)
         {
             rigid.AddForce(new Vector2(Input.GetAxis("Horizontal"),0.0f));
-            Debug.Log(Input.GetAxis("Horizontal"));
         }
     }
+    
 }

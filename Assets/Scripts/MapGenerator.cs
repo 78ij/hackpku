@@ -46,7 +46,7 @@ public class MapGenerator : MonoBehaviour {
                     tiles[j, i] = 0;
                     if(Random.Range(0,1) + 1.0 / 500 * (i * 30 + j) > 1 && !isinstaned)
                     {
-                        Instantiate(pawn, new Vector3(j - 15, i - 10, 0) * scale, new Quaternion());
+                        Instantiate(pawn, new Vector3(j - 15, i - 10, -2) * scale, new Quaternion());
                         isinstaned = true;
                     }
                     Instantiate(floor, new Vector3(j - 15, i - 10, 0) * scale , new Quaternion());
