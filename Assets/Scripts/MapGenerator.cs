@@ -8,10 +8,14 @@ public class MapGenerator : MonoBehaviour {
     public int height;
     public GameObject wall;
     public GameObject floor;
+    public GameObject pawn;
+    public int[,] tiles;
     Collider2D col;
+    public float scale;
     // Use this for initialization
     void Start () {
-        float scale = floor.transform.localScale.x *
+        tiles = new int[30, 20];
+        scale = floor.transform.localScale.x *
             floor.GetComponent<SpriteRenderer>().sprite.bounds.size.x;
         scale -= 0.02f;
         System.Diagnostics.Process p = new System.Diagnostics.Process();
@@ -24,11 +28,11 @@ public class MapGenerator : MonoBehaviour {
         p.Start();//启动程序
         StreamReader sr = p.StandardOutput;//将输出内容返回
         string retinfo = sr.ReadToEnd();//获得字符串
-        Debug.Log(retinfo);
-        int[,] tiles = new int[30, 20];
+        //Debug.Log(retinfo);
         col = wall.GetComponent<Collider2D>();
-        Debug.Log(retinfo);
-        Debug.Log(scale);
+        //Debug.Log(retinfo);
+        //Debug.Log(scale);
+        bool isinstaned = false;
         for (int i = 0; i < 20; i++)
         {
             for (int j = 0; j <= 30; j++)
@@ -40,6 +44,11 @@ public class MapGenerator : MonoBehaviour {
                     retinfo[i * 20 + j] == '+')
                 {
                     tiles[j, i] = 0;
+                    if(Random.Range(0,1) + 1.0 / 500 * (i * 30 + j) > 1 && !isinstaned)
+                    {
+                        Instantiate(pawn, new Vector3(j - 15, i - 10, 0) * scale, new Quaternion());
+                        isinstaned = true;
+                    }
                     Instantiate(floor, new Vector3(j - 15, i - 10, 0) * scale , new Quaternion());
                 }
                 else
@@ -51,6 +60,7 @@ public class MapGenerator : MonoBehaviour {
 
             }
         }
+
     }
 
     // Update is called once per frame

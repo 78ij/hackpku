@@ -140,7 +140,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &479302649
 MonoBehaviour:
@@ -157,6 +157,8 @@ MonoBehaviour:
   height: 0
   wall: {fileID: 1631113317813858, guid: d1a4a2235c335ef40b3c226ab4b916b5, type: 2}
   floor: {fileID: 1390801930958120, guid: 5990852b34b728c47b2be95e8bf7ac59, type: 2}
+  pawn: {fileID: 1558919134052528, guid: 267dcb829b3c862478dc9d8b7dca9753, type: 2}
+  scale: 0
 --- !u!1 &875923003
 GameObject:
   m_ObjectHideFlags: 0
@@ -236,5 +238,5 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
