@@ -51,16 +51,33 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\PolyNav2D\DEMO\Scripts\ClickToMove.cs" />
+     <Compile Include="Assets\PolyNav2D\DEMO\Scripts\MoveBetween.cs" />
+     <Compile Include="Assets\PolyNav2D\Scripts\Runtime\AStar.cs" />
+     <Compile Include="Assets\PolyNav2D\Scripts\Runtime\PolyNav2D.cs" />
+     <Compile Include="Assets\PolyNav2D\Scripts\Runtime\PolyNavAgent.cs" />
+     <Compile Include="Assets\PolyNav2D\Scripts\Runtime\PolyNavObstacle.cs" />
+     <Compile Include="Assets\Scripts\Baker.cs" />
      <Compile Include="Assets\Scripts\Classes.cs" />
      <Compile Include="Assets\Scripts\LOSCamera.cs" />
      <Compile Include="Assets\Scripts\MainCamera.cs" />
      <Compile Include="Assets\Scripts\MapCameraAdj.cs" />
      <Compile Include="Assets\Scripts\MapGenerator.cs" />
+     <Compile Include="Assets\Scripts\My_LocalNavMeshBuilder.cs" />
+     <Compile Include="Assets\Scripts\NavMeshLink.cs" />
+     <Compile Include="Assets\Scripts\NavMeshModifier.cs" />
+     <Compile Include="Assets\Scripts\NavMeshModifierVolume.cs" />
+     <Compile Include="Assets\Scripts\NavMeshSourceTag.cs" />
+     <Compile Include="Assets\Scripts\NavMeshSurface.cs" />
      <Compile Include="Assets\Scripts\pawnController.cs" />
      <Compile Include="Assets\Scripts\VisionController.cs" />
      <None Include="Assets\Shaders\GaussianBlur.shader" />
      <None Include="Assets\Shaders\LoS.shader" />
+     <None Include="Assets\Texts\教程.txt" />
+     <None Include="Assets\Texts\对话.txt" />
      <None Include="Assets\Shaders\VisionShader.shader" />
+     <None Include="Assets\Texts\自白 &amp; 日志.txt" />
+     <None Include="Assets\Texts\信息.txt" />
      <None Include="Assets\Scripts\a.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
