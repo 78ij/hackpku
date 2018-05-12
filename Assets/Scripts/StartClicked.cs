@@ -11,14 +11,13 @@ public class StartClicked : MonoBehaviour {
     {
         Button button = this.GetComponent<Button>();
         EventTrigger eventTrigger = button.gameObject.GetComponent<EventTrigger>();
-        EventTrigger.Entry entry = new EventTrigger.Entry();
+        EventTrigger.Entry click = new EventTrigger.Entry();
         //   点击事件
-        entry.eventID = EventTriggerType.PointerClick;
+        click.eventID = EventTriggerType.PointerClick;
 
     }
     // Update is called once per frame
-    void Update()
-    {
+    void Update() {
 
     }
 

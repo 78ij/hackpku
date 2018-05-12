@@ -55,6 +55,9 @@
      <Compile Include="Assets\Scripts\LOSCamera.cs" />
      <Compile Include="Assets\Scripts\MainCamera.cs" />
      <Compile Include="Assets\Scripts\MapGenerator.cs" />
+     <Compile Include="Assets\Scripts\MenuButton\QuitButton.cs" />
+     <Compile Include="Assets\Scripts\MenuButton\SettingButton.cs" />
+     <Compile Include="Assets\Scripts\MenuButton\StartButton.cs" />
      <Compile Include="Assets\Scripts\pawnController.cs" />
      <Compile Include="Assets\Scripts\StartClicked.cs" />
      <Compile Include="Assets\Scripts\VisionController.cs" />
