@@ -1,0 +1,20 @@
+（出生点旁边）
+
+Log No.13342
+
+TimeStamp: 2021/3/12 20:30:31
+
+Location: Sector 0x0000C0D3
+
+自检开始
+完整性检查..........完成
+可运行.............是
+更新检查...........有新版本
+
+V1.0.4 -> V2.1.4
+检测到已开启自动更新
+下载开始......... [xxx...] 56%
+
+Warning: FATAL error has occured.
+terminating......failed.
+
