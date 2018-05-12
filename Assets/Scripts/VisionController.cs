@@ -24,7 +24,7 @@ public class VisionController : MonoBehaviour
     void Update()
     {
         int mask = LayerMask.GetMask("Wall");
-        var blocks = Physics2D.CircleCastAll(this.transform.position, 15.0f, Vector2.zero, mask);
+        var blocks = Physics2D.CircleCastAll(this.transform.position, 7.0f, Vector2.zero, mask);
         //获取阻挡物上的点
         var points = blocks
             .Select(rh => rh.collider as BoxCollider2D)
@@ -50,14 +50,14 @@ public class VisionController : MonoBehaviour
         float deltaAngle = 360.0f / BorderDensity;
         for (int i = 0; i < BorderDensity; i++)
         {
-            borderPoints[i] = transform.position + Quaternion.Euler(0, 0, i * deltaAngle) * Vector2.up * 15.0f;
+            borderPoints[i] = transform.position + Quaternion.Euler(0, 0, i * deltaAngle) * Vector2.up * 7.0f;
         }
         //向所有点投影。留下最近的交点。
         points = points.Concat(borderPoints).Select(
                 pt => {
-                    var t = Physics2D.Raycast(transform.position, pt - (Vector2)transform.position, 115.0f, mask);
+                    var t = Physics2D.Raycast(transform.position, pt - (Vector2)transform.position, 17.0f, mask);
                     if (t.collider == null)
-                        return (Vector2)transform.position + (pt - (Vector2)transform.position).normalized * 15.0f;
+                        return (Vector2)transform.position + (pt - (Vector2)transform.position).normalized * 7.0f;
                     else
                         return t.point;
                 }

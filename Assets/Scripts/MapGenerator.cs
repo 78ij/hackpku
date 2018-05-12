@@ -6,7 +6,10 @@ using System.IO;
 public class MapGenerator : MonoBehaviour {
     public int width;
     public int height;
+    public GameObject[] floors = new GameObject[4];
+    public GameObject[] walls = new GameObject[3];
     public GameObject wall;
+    public GameObject unused;
     public GameObject floor;
     public GameObject pawn;
     public int[,] tiles;
@@ -19,7 +22,7 @@ public class MapGenerator : MonoBehaviour {
             floor.GetComponent<SpriteRenderer>().sprite.bounds.size.x;
         scale -= 0.02f;
         System.Diagnostics.Process p = new System.Diagnostics.Process();
-        p.StartInfo.FileName = "C:\\pku_project\\hackpku\\Assets\\Scripts\\test.exe";
+        p.StartInfo.FileName = "D:\\hackpku\\Assets\\Scripts\\test.exe";
         p.StartInfo.UseShellExecute = false;    //是否使用操作系统shell启动
         p.StartInfo.RedirectStandardInput = true;//接受来自调用程序的输入信息
         p.StartInfo.RedirectStandardOutput = true;//由调用程序获取输出信息
@@ -53,7 +56,13 @@ public class MapGenerator : MonoBehaviour {
                         Instantiate(pawn, new Vector3(i - 24.5f, j - 24.5f, -2) * scale, new Quaternion());
                         isinstaned = true;
                      }
+                    ranfloor();
                      Instantiate(floor, new Vector3(i - 24.5f, j - 24.5f, 0) * scale , new Quaternion());
+                }
+                else if(strings[i][j] == '.')
+                {
+                    Instantiate(unused, new Vector3(i - 24.5f, j - 24.5f, 0) * scale, new Quaternion());
+
                 }
                 else
                 {
@@ -68,4 +77,14 @@ public class MapGenerator : MonoBehaviour {
     void Update () {
 		
 	}
-}
+    void ranfloor()
+    {
+        int i = Random.Range(0, 3);
+        floor = floors[i];
+    }
+    void ranwall()
+    {
+        int i = Random.Range(0, 2);
+        wall = walls[i];
+    }
+ }

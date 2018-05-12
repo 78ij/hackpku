@@ -34,7 +34,7 @@ public class pawnController : MonoBehaviour {
         //    if (Input.GetKey("left shift"))
         //    {
         //        rigid.AddForce(new Vector2(1.5f * Input.GetAxis("Horizontal"), 0.0f));
-        //    }
+        //    }s
         //}
         float x = Input.GetAxis("Horizontal");
         float y = Input.GetAxis("Vertical");
