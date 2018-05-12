@@ -21,10 +21,19 @@ public class pawnController : MonoBehaviour {
         if (Input.GetAxis("Vertical") != 0)
         {
             rigid.AddForce(new Vector2(0.0f, Input.GetAxis("Vertical")));
+            if (Input.GetKey("left shift"))
+            {
+                rigid.AddForce(new Vector2(0.0f, 1.5f * Input.GetAxis("Vertical")));
+
+            }
         }
         if (Input.GetAxis("Horizontal") != 0)
         {
             rigid.AddForce(new Vector2(Input.GetAxis("Horizontal"),0.0f));
+            if (Input.GetKey("left shift"))
+            {
+                rigid.AddForce(new Vector2(1.5f * Input.GetAxis("Horizontal"), 0.0f));
+            }
         }
     }
     

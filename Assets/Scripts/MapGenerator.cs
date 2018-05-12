@@ -14,7 +14,7 @@ public class MapGenerator : MonoBehaviour {
     public float scale;
     // Use this for initialization
     void Start () {
-        tiles = new int[30, 20];
+        tiles = new int[50, 50];
         scale = floor.transform.localScale.x *
             floor.GetComponent<SpriteRenderer>().sprite.bounds.size.x;
         scale -= 0.02f;
@@ -27,40 +27,41 @@ public class MapGenerator : MonoBehaviour {
         p.StartInfo.CreateNoWindow = true;//不显示程序窗口
         p.Start();//启动程序
         StreamReader sr = p.StandardOutput;//将输出内容返回
-        string retinfo = sr.ReadToEnd();//获得字符串
-        //Debug.Log(retinfo);
+        List<string> strings = new List<string>();
+        string str;
+        while((str = sr.ReadLine()) != null){
+            strings.Add(str);
+        }
+        Debug.Log(strings[0].Length);
         col = wall.GetComponent<Collider2D>();
         //Debug.Log(retinfo);
         //Debug.Log(scale);
         bool isinstaned = false;
-        for (int i = 0; i < 20; i++)
+        for (int i = 0; i < 50; i++)
         {
-            for (int j = 0; j <= 30; j++)
+            for (int j = 0; j < 50; j++)
             {
-                if (j == 30) continue;
-                else if (retinfo[i * 20 + j] == ' ' ||
-                    retinfo[i * 20 + j] == '>' ||
-                    retinfo[i * 20 + j] == '<' ||
-                    retinfo[i * 20 + j] == '+')
+                 if (strings[i][j] == ' ' ||
+
+                   strings[i][j] == '>' ||
+                   strings[i][j] == '<' ||
+                   strings[i][j] == '+')
                 {
-                    tiles[j, i] = 0;
-                    if(Random.Range(0,1) + 1.0 / 500 * (i * 30 + j) > 1 && !isinstaned)
-                    {
-                        Instantiate(pawn, new Vector3(j - 15, i - 10, -2) * scale, new Quaternion());
+                    tiles[i,j] = 0;
+                     if(Random.Range(0,1) + 1.0 / 500 * (i * 50 + j) > 1 && !isinstaned)
+                     {
+                        Instantiate(pawn, new Vector3(i - 24.5f, j - 24.5f, -2) * scale, new Quaternion());
                         isinstaned = true;
-                    }
-                    Instantiate(floor, new Vector3(j - 15, i - 10, 0) * scale , new Quaternion());
+                     }
+                     Instantiate(floor, new Vector3(i - 24.5f, j - 24.5f, 0) * scale , new Quaternion());
                 }
                 else
                 {
                     tiles[j, i] = 1;
-                    Instantiate(wall, new Vector3(j - 15, i - 10, 0) * scale , new Quaternion());
-
+                    Instantiate(wall, new Vector3(i - 24.5f, j - 24.5f, 0) * scale , new Quaternion());
                 }
-
             }
         }
-
     }
 
     // Update is called once per frame
