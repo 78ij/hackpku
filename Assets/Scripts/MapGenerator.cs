@@ -19,7 +19,7 @@ public class MapGenerator : MonoBehaviour {
             floor.GetComponent<SpriteRenderer>().sprite.bounds.size.x;
         scale -= 0.02f;
         System.Diagnostics.Process p = new System.Diagnostics.Process();
-        p.StartInfo.FileName = "D:\\hackpku\\Assets\\Scripts\\test.exe";
+        p.StartInfo.FileName = "C:\\pku_project\\hackpku\\Assets\\Scripts\\test.exe";
         p.StartInfo.UseShellExecute = false;    //是否使用操作系统shell启动
         p.StartInfo.RedirectStandardInput = true;//接受来自调用程序的输入信息
         p.StartInfo.RedirectStandardOutput = true;//由调用程序获取输出信息
