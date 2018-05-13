@@ -12,5 +12,6 @@ public class QuitButton : MonoBehaviour {
     // Update is called once per frame
     public void quitbuttonclick()
     {
+        Application.Quit();
     }
 }

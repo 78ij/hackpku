@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
+//using UnityEditor;
 using System.IO;
 public class MapGenerator : MonoBehaviour {
     public int width;
@@ -12,6 +12,8 @@ public class MapGenerator : MonoBehaviour {
     public GameObject unused;
     public GameObject floor;
     public GameObject pawn;
+    public GameObject enemy1;
+    public GameObject chest;
     public int[,] tiles;
     Collider2D col;
     public float scale;
@@ -40,6 +42,8 @@ public class MapGenerator : MonoBehaviour {
         //Debug.Log(retinfo);
         //Debug.Log(scale);
         bool isinstaned = false;
+        bool iseinstaned = false;
+        int x = 0,y = 0;
         for (int i = 0; i < 50; i++)
         {
             for (int j = 0; j < 50; j++)
@@ -50,12 +54,21 @@ public class MapGenerator : MonoBehaviour {
                    strings[i][j] == '<' ||
                    strings[i][j] == '+')
                 {
-                    tiles[i,j] = 0;
+                     tiles[i,j] = 0;
+
                      if(Random.Range(0,1) + 1.0 / 500 * (i * 50 + j) > 1 && !isinstaned)
                      {
+                        x = i;
+                        y = j;
                         Instantiate(pawn, new Vector3(i - 24.5f, j - 24.5f, -2) * scale, new Quaternion());
                         isinstaned = true;
-                     }
+                        
+                    }
+                    if (Random.Range(0, 1) + 1.0 / 200 * (j * 50 + i) > 1 && !iseinstaned)
+                    {
+                        Instantiate(enemy1, new Vector3(i - 24.5f, j - 24.5f, -2) * scale, new Quaternion());
+                        iseinstaned = true;
+                    }
                     ranfloor();
                      Instantiate(floor, new Vector3(i - 24.5f, j - 24.5f, 0) * scale , new Quaternion());
                 }
@@ -71,6 +84,7 @@ public class MapGenerator : MonoBehaviour {
                 }
             }
         }
+
     }
 
     // Update is called once per frame

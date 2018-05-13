@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 61304779868062080}
   - component: {fileID: 50623374547276924}
   - component: {fileID: 114535484949018036}
-  - component: {fileID: 114494481490453060}
+  - component: {fileID: 95262592625423668}
   m_Layer: 0
   m_Name: pawn
   m_TagString: Player
@@ -39,7 +39,7 @@ Transform:
   m_GameObject: {fileID: 1558919134052528}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 7.046656, y: -1.0219928, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -80,7 +80,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.3, y: 0.3}
+    oldSize: {x: 3, y: 3}
     newSize: {x: 0.3, y: 0.3}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -89,28 +89,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.25482243, y: 0.2548227}
   m_EdgeRadius: 0
---- !u!114 &114494481490453060
-MonoBehaviour:
+--- !u!95 &95262592625423668
+Animator:
+  serializedVersion: 3
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1558919134052528}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93cc6a4987f7c684798156c56d545838, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxSpeed: 3.5
-  mass: 20
-  stoppingDistance: 0.1
-  slowingDistance: 1
-  decelerationRate: 2
-  closerPointOnInvalid: 0
-  rotateTransform: 0
-  rotateSpeed: 350
-  sendMessages: 1
-  debugPath: 1
-  avoidRadius: 0
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 317607003f6b6ad408b25e98e3bbc1f4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114535484949018036
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -122,6 +117,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b9096b50a632b645b45bb9b7464717f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hp: 0
+  mp: 0
+  anim: {fileID: 0}
   MainCamera: {fileID: 0}
   scale: 3
 --- !u!212 &212129924179155626
@@ -158,7 +156,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e7b29384e49dfec4fb62b4255e23cb05, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1c9b7f4c6badabd4596724b5ff20b947, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

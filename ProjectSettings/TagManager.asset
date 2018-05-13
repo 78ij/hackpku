@@ -6,6 +6,10 @@ TagManager:
   tags:
   - generator
   - map
+  - A*
+  - hp
+  - mp
+  - enemy
   layers:
   - Default
   - TransparentFX

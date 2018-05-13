@@ -72,7 +72,7 @@ public class SettingWindowController : MonoBehaviour {
     }
     void not()
     {
-        Debug.Log("aaaa");
+        //Debug.Log("aaaa");
         StartCoroutine(reject());
     }
     IEnumerator reject()

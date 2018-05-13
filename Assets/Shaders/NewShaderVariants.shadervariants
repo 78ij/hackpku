@@ -1,0 +1,107 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!200 &20000000
+ShaderVariantCollection:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: NewShaderVariants
+  m_Shaders:
+  - first: {fileID: 66, guid: 0000000000000000f000000000000000, type: 0}
+    second:
+      variants:
+      - keywords: 
+        passType: 0
+  - first: {fileID: 75, guid: 0000000000000000f000000000000000, type: 0}
+    second:
+      variants:
+      - keywords: 
+        passType: 0
+  - first: {fileID: 9000, guid: 0000000000000000f000000000000000, type: 0}
+    second:
+      variants:
+      - keywords: 
+        passType: 0
+  - first: {fileID: 9001, guid: 0000000000000000f000000000000000, type: 0}
+    second:
+      variants:
+      - keywords: 
+        passType: 0
+  - first: {fileID: 9002, guid: 0000000000000000f000000000000000, type: 0}
+    second:
+      variants:
+      - keywords: 
+        passType: 0
+  - first: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
+    second:
+      variants:
+      - keywords: ETC1_EXTERNAL_ALPHA
+        passType: 0
+  - first: {fileID: 10770, guid: 0000000000000000f000000000000000, type: 0}
+    second:
+      variants:
+      - keywords: 
+        passType: 0
+  - first: {fileID: 4800000, guid: 463b65683c466e043b7e31a902c2b1a7, type: 3}
+    second:
+      variants:
+      - keywords: 
+        passType: 0
+  - first: {fileID: 4800000, guid: bcca45e0370bd3f409ab7629065b8293, type: 3}
+    second:
+      variants:
+      - keywords: 
+        passType: 0
+  - first: {fileID: 4800000, guid: dfc0e2644d750b0458b3ea1725b8b899, type: 3}
+    second:
+      variants:
+      - keywords: 
+        passType: 0
+  - first: {fileID: 4800000, guid: 5c710f5672e5a48f4ac48dbcb1029867, type: 3}
+    second:
+      variants: []
+  - first: {fileID: 4800000, guid: 899322ee3ece14867ae30422e6f5da7e, type: 3}
+    second:
+      variants: []
+  - first: {fileID: 4800000, guid: e8300a6d5fa1e40e3be436f03176915f, type: 3}
+    second:
+      variants: []
+  - first: {fileID: 4800000, guid: 708abfe4d1ccc52499687ae096f5649f, type: 3}
+    second:
+      variants: []
+  - first: {fileID: 4800000, guid: b17e229fa41d89d4797c7713bee50ab2, type: 3}
+    second:
+      variants: []
+  - first: {fileID: 4800000, guid: d94475c822fbefd4e865d0fcd39c5fd2, type: 3}
+    second:
+      variants: []
+  - first: {fileID: 4800000, guid: 4ceb73bc148699b469361531d6062548, type: 3}
+    second:
+      variants:
+      - keywords: 
+        passType: 0
+  - first: {fileID: 4800000, guid: 6ab8493603d8f8e408750b81666a95f1, type: 3}
+    second:
+      variants:
+      - keywords: 
+        passType: 0
+  - first: {fileID: 4800000, guid: 72127ba7dd8c6b04bb3f29c7ee669813, type: 3}
+    second:
+      variants: []
+  - first: {fileID: 4800000, guid: 7d89469544dfa214eabdbf37fca76f40, type: 3}
+    second:
+      variants:
+      - keywords: 
+        passType: 0
+  - first: {fileID: 4800000, guid: 8ce0a6f4c8cae334d8a5617f302b6769, type: 3}
+    second:
+      variants:
+      - keywords: BLOOM UNITY_COLORSPACE_GAMMA
+        passType: 0
+      - keywords: BLOOM DEPTH_OF_FIELD UNITY_COLORSPACE_GAMMA
+        passType: 0
+  - first: {fileID: 4800000, guid: ac8ed710934a3564686a096bb351caee, type: 3}
+    second:
+      variants:
+      - keywords: 
+        passType: 0

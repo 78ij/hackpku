@@ -7,6 +7,7 @@ public class GameController : MonoBehaviour
 {
     public List<GameObject> journal;
      List<Image> jimage = new List<Image>();
+    public AudioSource bgm;
     public Button cont;
     public Button set;
     public Button quit;
@@ -26,6 +27,7 @@ public class GameController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        quit.onClick.AddListener(() => { Application.Quit(); });
         jourbk.onClick.AddListener(() =>
         {
             oldtime = Time.realtimeSinceStartup;
@@ -86,7 +88,7 @@ public class GameController : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1") && isdisplaying)
         {
-            Debug.Log("aaaa");
+          //  Debug.Log("aaaa");
             isdisplaying = false;
             oldtime = Time.realtimeSinceStartup;
             StartCoroutine(Fadejournal());
@@ -98,9 +100,9 @@ public class GameController : MonoBehaviour
         while (true)
         {
             currenttime = Time.realtimeSinceStartup;
-            Debug.Log(currenttime);
+         //   Debug.Log(currenttime);
             float alpha = ((currenttime - oldtime) / 2);
-            Debug.Log(alpha);
+          //  Debug.Log(alpha);
             image.color = new Color(0, 0, 0, alpha);
             text1.color = new Color(1, 1, 1, alpha);
             text2.color = new Color(1, 1, 1, alpha);
@@ -121,9 +123,9 @@ public class GameController : MonoBehaviour
         while (true)
         {
             currenttime = Time.realtimeSinceStartup;
-            Debug.Log(currenttime);
+           // Debug.Log(currenttime);
             float alpha = 1 - ((currenttime - oldtime) / 2);
-            Debug.Log(alpha);
+           // Debug.Log(alpha);
             image.color = new Color(0, 0, 0, alpha);
             text1.color = new Color(1, 1, 1, alpha);
             text2.color = new Color(1, 1, 1, alpha);
@@ -138,6 +140,7 @@ public class GameController : MonoBehaviour
         }
         Time.timeScale = 1;
         Panel.SetActive(false);
+        bgm.Play();
         yield return null;
     }
     
@@ -171,9 +174,9 @@ public class GameController : MonoBehaviour
         while (true)
         {
             currenttime = Time.realtimeSinceStartup;
-            Debug.Log(currenttime);
+            //Debug.Log(currenttime);
             float alpha = ((currenttime - oldtime) * 2);
-            Debug.Log(alpha);
+            //Debug.Log(alpha);
             foreach (var a in jimage)
             {
                 a.color = new Color(1, 1, 1, alpha);
@@ -194,9 +197,9 @@ public class GameController : MonoBehaviour
         while (true)
         {
             currenttime = Time.realtimeSinceStartup;
-            Debug.Log(currenttime);
+            //Debug.Log(currenttime);
             float alpha = 1 - ((currenttime - oldtime) * 2);
-            Debug.Log(alpha);
+            //Debug.Log(alpha);
             foreach (var a in jimage)
             {
                 a.color = new Color(1, 1, 1, alpha);
@@ -223,9 +226,9 @@ public class GameController : MonoBehaviour
         while (true)
         {
             currenttime = Time.realtimeSinceStartup;
-            Debug.Log(currenttime);
+            //Debug.Log(currenttime);
             float alpha = 1 - ((currenttime - oldtime) * 2);
-            Debug.Log(alpha);
+           // Debug.Log(alpha);
             foreach (var a in images)
             {
                 a.color = new Color(1, 1, 1, alpha);
